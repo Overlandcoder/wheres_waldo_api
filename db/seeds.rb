@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+beach = Map.create(name: "beach")
+beach.characters.create(name: "waldo", position: [0.7263, 0.7326, 0.4283, 0.4563])
+beach.characters.create(name: "wizard", position: [0.3767, 0.3872, 0.4058, 0.4337])
+beach.characters.create(name: "odlaw", position: [0.2159, 0.2216, 0.4076, 0.4292])
+beach.characters.create(name: "wilma", position: [0.8808, 0.8877, 0.4617, 0.477])
