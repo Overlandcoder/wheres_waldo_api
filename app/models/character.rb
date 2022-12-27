@@ -1,9 +1,9 @@
 class Character < ApplicationRecord
   belongs_to :map
 
-  def find_char(guess_x, guess_y, map)
+  def self.find_char(guess_x, guess_y, map)
     map_id = Map.find_by(name: map).id
-    characters = Character.where(map: map_id).pluck(:name, :position)
+    characters = Character.where(map: map_id)
 
     characters.any? do |character|
       x1 = character.position[0]
