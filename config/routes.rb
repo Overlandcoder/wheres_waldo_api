@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "/api/check_guess", to: "characters#check_guess"
+  post "/api/save_score", to: "scores#create"
 end
