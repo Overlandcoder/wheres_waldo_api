@@ -3,7 +3,7 @@ class ScoresController < ApplicationController
     @score = Score.new(score_params)
 
     if @score.save
-      render json: { message: "saved" }
+      render json: { message: "Score saved for #{params[:name]}" }
     else
       render json: { message: @score.errors }
     end
