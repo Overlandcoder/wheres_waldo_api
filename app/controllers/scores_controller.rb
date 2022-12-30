@@ -11,8 +11,7 @@ class ScoresController < ApplicationController
   end
 
   def top_scores
-    @top_scores = Score.ordered.limit(params[:amount])
-
+    @top_scores = Score.ordered.limit(params[:amount].to_i)
     render json: { top_scores: @top_scores }
   end
 
