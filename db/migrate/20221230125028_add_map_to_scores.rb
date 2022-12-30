@@ -1,0 +1,5 @@
+class AddMapToScores < ActiveRecord::Migration[7.0]
+  def change
+    add_reference :scores, :map, null: false, foreign_key: true
+  end
+end
