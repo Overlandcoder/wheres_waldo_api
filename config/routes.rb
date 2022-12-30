@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   get "/api/check_guess", to: "characters#check_guess"
   post "/api/save_score", to: "scores#create"
+  get "/api/top_scores", to: "scores#top_scores"
 end
