@@ -1,6 +1,6 @@
 class ScoresController < ApplicationController
   def create
-    @map = Map.find_by(name: params[:map])
+    @map = Map.find_by(name: params[:map_name])
     @score = @map.scores.build(name: params[:name], seconds: params[:seconds])
 
     if @score.save
@@ -11,17 +11,18 @@ class ScoresController < ApplicationController
   end
 
   def top_scores
-    @top_scores = Score.ordered.limit(params[:amount].to_i)
+    @top_scores = {}
+
+    Map.find_each do |map|
+      @top_scores[map.name] = map.scores.ordered.limit(params[:amount].to_i)
+    end
+
     render json: { top_scores: @top_scores }
   end
 
   private
 
   def score_params
-    params.permit(:name, :seconds, :map)
-  end
-
-  def top_scores_params
-    params.permit(:amount)
+    params.permit(:name, :seconds, :map_name, :amount)
   end
 end

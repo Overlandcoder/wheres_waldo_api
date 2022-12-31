@@ -1,6 +1,6 @@
 class CharactersController < ApplicationController
   def check_guess
-    char_found = Character.find_char(params[:x].to_f, params[:y].to_f, params[:map])
+    char_found = Character.find_char(params[:x].to_f, params[:y].to_f, params[:map_name])
 
     if char_found
       render json: { found: char_found }
@@ -12,6 +12,6 @@ class CharactersController < ApplicationController
   private
 
   def character_params
-    params.permit(:x, :y, :map)
+    params.permit(:x, :y, :map_name)
   end
 end
