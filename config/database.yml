@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: wheres_waldo_api_production
+  url: <%= ENV['DATABASE_URL'] %>
