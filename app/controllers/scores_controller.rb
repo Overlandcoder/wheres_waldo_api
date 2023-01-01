@@ -14,7 +14,8 @@ class ScoresController < ApplicationController
     @top_scores = {}
 
     Map.find_each do |map|
-      puts map.scores.count
+      puts "#{map} score count: #{map.scores.count}"
+      p params
       @top_scores[map.name] = map.scores.ordered.limit(params[:amount].to_i)
     end
 
