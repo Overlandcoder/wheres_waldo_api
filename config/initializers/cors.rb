@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "http://localhost:3001", "127.0.0.1:3001"
+    origins "https://overlandcoder.github.io/wheres_waldo/", "http://localhost:3001", "127.0.0.1:3001"
 
     resource "*",
       headers: :any,
@@ -16,3 +16,4 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
 end
 
 Rails.application.config.hosts << "http://localhost:3001"
+Rails.application.config.hosts << "https://overlandcoder.github.io/wheres_waldo/"
