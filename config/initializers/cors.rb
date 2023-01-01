@@ -18,5 +18,5 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
 end
 
 Rails.application.config.hosts << "http://localhost:3001"
-Rails.application.config.hosts << "https://overlandcoder.github.io/wheres-waldo/"
 Rails.application.config.hosts << "https://wheres-waldo-service.onrender.com"
+Rails.application.config.hosts << "wheres-waldo-service.onrender.com"
