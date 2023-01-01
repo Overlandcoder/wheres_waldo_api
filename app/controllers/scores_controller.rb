@@ -4,7 +4,7 @@ class ScoresController < ApplicationController
     @score = @map.scores.build(name: params[:name], seconds: params[:seconds])
 
     if @score.save
-      render json: { message: "Score saved for #{params[:name]}" }
+      render json: { message: "Score saved for #{params[:name]}", score: @score }
     else
       render json: { message: @score.errors }
     end
