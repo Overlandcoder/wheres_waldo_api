@@ -3,7 +3,7 @@ class ScoresController < ApplicationController
     @map = Map.find_by(name: params[:map_name])
     @score = @map.scores.build(name: params[:name], seconds: params[:seconds])
 
-    if @score.save
+    if @score.save!
       render json: { message: "Score saved for #{params[:name]}", score: @score }
     else
       render json: { message: @score.errors }
@@ -14,6 +14,7 @@ class ScoresController < ApplicationController
     @top_scores = {}
 
     Map.find_each do |map|
+      puts maps.scores.count
       @top_scores[map.name] = map.scores.ordered.limit(params[:amount].to_i)
     end
 
