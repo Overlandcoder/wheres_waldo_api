@@ -7,10 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "https://overlandcoder.github.io/wheres-waldo",
-            "https://wheres-waldo-service.onrender.com",
-            "http://localhost:3001",
-            "127.0.0.1:3001"
+    origins "*"
 
     resource "*",
       headers: :any,
