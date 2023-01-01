@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "https://overlandcoder.github.io/wheres_waldo/",
+    origins "https://overlandcoder.github.io/wheres-waldo/",
             "https://wheres-waldo-service.onrender.com",
             "http://localhost:3001",
             "127.0.0.1:3001"
@@ -18,10 +18,6 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
 end
 
-# Rails.application.config.hosts << "http://localhost:3001"
-# Rails.application.config.hosts << "https://overlandcoder.github.io/wheres_waldo/"
-# Rails.application.config.hosts << "https://wheres-waldo-service.onrender.com"
-
-Rails.application.configure do
-  config.hosts.clear
-end
+Rails.application.config.hosts << "http://localhost:3001"
+Rails.application.config.hosts << "https://overlandcoder.github.io/wheres-waldo/"
+Rails.application.config.hosts << "https://wheres-waldo-service.onrender.com"
